@@ -2,19 +2,19 @@ package Comportamentale.MementoClasic;
 
 public class MementoVersion {
     public static void main(String[] args) throws InterruptedException {
-        Version version = new Version();
-        version.set("Versiunea 0.1.");//Setăm versiunea initiala
+        Comanda comanda1 = new Comanda();
+        comanda1.set("Comanda valida");//Setăm versiunea initiala
 
-        System.out.println(version);//afișare versiune
+        System.out.println(comanda1);//afișare versiune
 
         File file = new File();
-        file.setSave(version.save()); // salvam versiunea curenta
+        file.setSave(comanda1.save()); // salvam versiunea curenta
 
         Thread.sleep(3000); //pauza de 3 secunde
-        version.set("Versiunea 1.0"); // setăm versiunea 1.0
-        System.out.println(version); //afișare versiune
+        comanda1.set("Adaugăm produs"); // setăm versiunea 1.0
+        System.out.println(comanda1); //afișare versiune
 //observam ca ceva nu merge bine sau am facut o eroare
-        version.load(file.getSave()); //incarcam ultima versiune lucratoare
-        System.out.println(version); //afisare versiune
+        comanda1.load(file.getSave()); //incarcam ultima versiune lucratoare
+        System.out.println(comanda1); //afisare versiune
     }
 }
